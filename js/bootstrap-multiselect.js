@@ -6,9 +6,11 @@
  *
  * Dual licensed under the BSD-3-Clause and the Apache License, Version 2.0.
  */
-!function($) {
+!function($, window) {
 
     "use strict";// jshint ;_;
+    
+    var ko = (window.kb && window.kb.ko) || window.ko;
 
     if (typeof ko !== 'undefined' && ko.bindingHandlers && !ko.bindingHandlers.multiselect) {
         ko.bindingHandlers.multiselect = {
@@ -896,4 +898,4 @@
         $("select[data-role=multiselect]").multiselect();
     });
 
-}(window.jQuery);
+}(window.jQuery, window);
